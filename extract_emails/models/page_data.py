@@ -64,7 +64,7 @@ class PageData(BaseModel):
         data_headers = [i for i in data[0].data.keys()]
         headers = base_headers + data_headers
 
-        with open(filepath, "w", encoding="utf-8", newline="") as f:
+        with open(filepath, "a", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=headers)
             writer.writeheader()
             for page in data:
